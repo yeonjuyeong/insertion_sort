@@ -6,6 +6,7 @@
 <br>
 <br>삽입 정렬의 시간 복잡도
 <br>->예를들어 [5, 4, 3, 2, 1]과 같은 최악의 경우에는 각각의 탐색에서 무조건 앞의 모든 원소를 뒤로 미뤄버리는 작업을 해야하기 때문에, 시간 복잡도는 O(n^2)이다.
+# JAVA 삽입 정렬
 
 	public static void main(String[] args) {
 		nums = new int[10];
