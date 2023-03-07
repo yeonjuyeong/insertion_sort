@@ -30,8 +30,14 @@
  1 2 3 4 5
 ## JAVA 삽입 정렬
 ```java
-public static void main(String[] args) {
-	nums = new int[10];
+package sort;
+import java.util.*;
+public class insertion_sort {
+	static int[] nums;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		nums = new int[10];
 		for (int i = 0; i < 10; i++) {
 			nums[i] = (int) (Math.random() * 10);
 		}
@@ -57,8 +63,12 @@ public static void main(String[] args) {
 		System.out.println("<정렬 후>");
 		System.out.println(Arrays.toString(nums));
 	}
+		
+
 }
 ```
+## 결과
+![image](https://user-images.githubusercontent.com/123055714/223324447-7406228f-b9f4-4948-aa4e-076a8ba3d376.png)
 
 # bubble_sort
 
@@ -95,4 +105,41 @@ public static void main(String[] args) {
  
  ## JAVA 버블 정렬
  ```java
+ public class BubbleSort {
  
+    public static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j + 1);
+                }
+            }
+        }
+    }
+ 
+    public static void swap(int[] array, int source, int target) {
+        int temp = array[source];
+        array[source] = array[target];
+        array[target] = temp;
+ 
+    }
+ 
+    public static void printArray(int[] array) {
+        for (int data : array) {
+            System.out.print(data + " ");
+        }
+        System.out.println();
+    }
+ 
+    public static void main(String[] args) {
+        int[] item = new int[] { 5, 3, 8, 1, 2, 7 };
+        System.out.println("정렬 전");
+        printArray(item);
+        bubbleSort(item);
+        System.out.println("정렬 후");
+        printArray(item);
+ 
+    }
+ 
+}
+''''
