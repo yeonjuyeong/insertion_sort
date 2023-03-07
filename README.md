@@ -171,3 +171,45 @@ public class insertion_sort {
 1. 특정 조건하에 성능이 급격하게 떨어진다.
 
 2. 재귀를 사용하기 때문에 재귀를 사용하지 못하는 환경일 경우 그 구현이 매우 복잡해진다.
+
+## JAVA 퀵 정렬
+```java
+    private static void quickSort(int[] arr,int start, int end) {
+        int part=partition(arr,start,end);
+        if(start<part-1) quickSort(arr,start,part-1);
+        if(end>part) quickSort(arr,part,end);
+    }
+
+    private static int partition(int[] arr,int start,int end) {
+        int pivot=arr[(start+end)/2];
+        while(start<=end) {
+            while(arr[start]<pivot) start++;
+            while(arr[end]>pivot) end--;
+            if(start<=end) {
+                swap(arr,start,end);
+                start++;
+                end--;
+            }
+        }
+        return start;
+    }
+
+    private static void swap(int[] arr,int start,int end) {
+        int tmp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=tmp;
+        return;
+    }
+
+
+    public static void main(String[] args) {
+        int[] arr= {7,4,2,8,3,5,1,6,10,9};
+        quickSort(arr,0,arr.length-1);
+        for(int i=0;i<arr.length;i++) {
+            System.out.print(arr[i]+",");
+        }
+    }
+```
+## 결과
+![image](https://user-images.githubusercontent.com/123055714/223578334-516d9c95-d2a8-4ff4-970b-e8f42904b269.png)
+
